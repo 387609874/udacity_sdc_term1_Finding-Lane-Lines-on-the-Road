@@ -1,9 +1,5 @@
 # **Finding Lane Lines on the Road** 
 
-## Writeup Template
-
-### You can use this file as a template for your writeup if you want to submit it as a markdown file. But feel free to use some other method and submit a pdf if you prefer.
-
 ---
 
 **Finding Lane Lines on the Road**
@@ -15,33 +11,40 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/grayscale.jpg "Grayscale"
+[image1]: ./readme_image/grayscale.png "Grayscale"
+[image2]: ./readme_image/gaussian_blur.png "Gaussian Blur"
+[image3]: ./readme_image/interests.png "Interests"
+[image4]: ./readme_image/canny.png "Canny"
+[image5]: ./readme_image/result.png "Result"
 
 ---
 
 ### Reflection
 
-### 1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
+### 1. Steps to find lane line on the road
 
-My pipeline consisted of 5 steps. First, I converted the images to grayscale, then I .... 
-
-In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
-
-If you'd like to include images to show how the pipeline works, here is how to include an image: 
-
+#### a). Gray scale the image
+Uses the function from openCV to gray scale image.
 ![alt text][image1]
+#### b). Gaussian blur the gray scaled image
+Uses the function from openCV to Gaussian blur image.
+![alt text][image2]
+#### c). Use hough transform to find lines
+Uses the function from openCV to hough transform image.
+![alt text][image4]
+#### d). Find the regions of interest
+Uses the function from openCV to find the region of interest image.
+![alt text][image3]
+#### e). Draw lines to the original image
+Draw lines that we found from regions of interest
+![alt text][image5]
 
 
 ### 2. Identify potential shortcomings with your current pipeline
 
-
-One potential shortcoming would be what would happen when ... 
-
-Another shortcoming could be ...
+When the road is turning, the line image will have some noices.
 
 
 ### 3. Suggest possible improvements to your pipeline
 
-A possible improvement would be to ...
 
-Another potential improvement could be to ...
